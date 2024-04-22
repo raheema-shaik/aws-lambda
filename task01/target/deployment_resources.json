@@ -1,0 +1,24 @@
+{
+  "DemoLambda" : {
+    "name" : "DemoLambda",
+    "lambda_path" : "C:\\Users\\shaik_raheema\\syndicate-demoproject\\DemoSyndicateJava",
+    "version" : "1.0.0",
+    "func_name" : "com.DemoSyndicateJava.Demolambda",
+    "deployment_package" : "DemoSyndicateJava-1.0.0.jar",
+    "resource_type" : "lambda",
+    "runtime" : "java11",
+    "architectures" : [ "x86_64" ],
+    "iam_role_name" : "DemoLambda-role",
+    "memory" : 1024,
+    "timeout" : 300,
+    "subnet_ids" : [ ],
+    "security_group_ids" : [ ],
+    "dependencies" : [ ],
+    "event_sources" : [ ],
+    "env_variables" : { },
+    "publish_version" : true,
+    "alias" : "${lambdas_alias_name}",
+    "logs_expiration" : "${logs_expiration}",
+    "snap_start" : "None"
+  }
+}
