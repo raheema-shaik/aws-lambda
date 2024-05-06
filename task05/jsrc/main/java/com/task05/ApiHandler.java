@@ -25,11 +25,12 @@ import com.syndicate.deployment.model.RetentionSetting;
 public class ApiHandler implements RequestHandler<Map<String,Object>, Map<String, Object>> {
 
 	private final Table eventsTable;
-
+	private final Table eventsTable2;
 	public ApiHandler() {
 		AmazonDynamoDB client = AmazonDynamoDBClientBuilder.defaultClient();
 		DynamoDB dynamoDB = new DynamoDB(client);
 		eventsTable = dynamoDB.getTable("cmtr-55717e2b-Events-test");
+		eventsTable2 = dynamoDB.getTable("cmtr-55717e2b-Events");
 	}
 
 	public Map<String, Object> handleRequest(Map<String,Object> request, Context context) {
@@ -44,6 +45,7 @@ public class ApiHandler implements RequestHandler<Map<String,Object>, Map<String
 					.withMap("body", content);
 
 			eventsTable.putItem(eventItem);
+			eventsTable2.putItem(eventItem);
 
 			Map<String, Object> response = new HashMap<>();
 			response.put("statusCode", 201);
