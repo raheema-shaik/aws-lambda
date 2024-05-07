@@ -1,0 +1,4 @@
+com\task06\AuditProducer.class
+com\task06\dynamodb\AuditInsert.class
+com\task06\dynamodb\AuditUpdate.class
+com\task06\dynamodb\ConfigurationItem.class
