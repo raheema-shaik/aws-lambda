@@ -44,12 +44,12 @@ import com.syndicate.deployment.model.lambda.url.InvokeMode;
 
 public class Processor implements RequestHandler<Map<String,Object>, Map<String, Object>> {
 
-	//private final Table eventsTable;
+	private final Table eventsTable;
 	private final Table eventsTable2;
 	public Processor() {
 		AmazonDynamoDB client = AmazonDynamoDBClientBuilder.defaultClient();
 		DynamoDB dynamoDB = new DynamoDB(client);
-		//eventsTable = dynamoDB.getTable("cmtr-55717e2b-Weather-test");
+		eventsTable = dynamoDB.getTable("cmtr-55717e2b-Weather-test");
 		System.out.println("before calling table");
 		eventsTable2 = dynamoDB.getTable("cmtr-55717e2b-Weather");
 		System.out.println("after calling table");
@@ -64,7 +64,7 @@ public class Processor implements RequestHandler<Map<String,Object>, Map<String,
 					.withPrimaryKey("id", UUID.randomUUID().toString())
 					.withJSON("forecast", weather.getWeatherForecast());
 			System.out.println("after api response and item");
-			//eventsTable.putItem(eventItem);
+			eventsTable.putItem(eventItem);
 			eventsTable2.putItem(eventItem);
 			System.out.println("after putting to db");
 			Map<String, Object> response = new HashMap<>();

@@ -16,7 +16,8 @@
             "ssm:GetParameter",
             "kms:Decrypt",
             "xray:PutTraceSegments",
-            "xray:PutTelemetryRecords"
+            "xray:PutTelemetryRecords",
+            "lambda:EnableTracing"
           ],
           "Effect": "Allow",
           "Resource": "*"
