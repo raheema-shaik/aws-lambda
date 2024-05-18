@@ -193,6 +193,17 @@
       "post": {
       "summary": "posting table",
         "description": "posting tables data.",
+        "requestBody": {
+          "description": "Table object that needs to be added to the store",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Table"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "200 response",
@@ -282,6 +293,17 @@
       "post": {
       "summary": "signin for user",
        "description": "signin data for user.",
+       "requestBody": {
+          "description": "User object that needs to be added to the store",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "200 response",
@@ -371,6 +393,17 @@
       "get": {
       "summary": "Get table on id",
        "description": "Retrieve table on id.",
+       "requestBody": {
+          "description": "User log in object that needs to be added to the store",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Userlog"
+              }
+            }
+          }
+        },
         "parameters": [
           {
             "name": "tableId",
