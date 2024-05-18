@@ -299,7 +299,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/Userlog"
               }
             }
           }
@@ -513,6 +513,17 @@
       "post": {
       "summary": "signup user",
        "description": "signup for user data",
+       "requestBody": {
+          "description": "User object that needs to be added to the store",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "200 response",
