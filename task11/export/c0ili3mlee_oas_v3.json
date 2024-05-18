@@ -54,6 +54,8 @@
         }
       },
       "post": {
+      "summary": "Post the reservations",
+       "description": "Posting reservations.",
         "responses": {
           "200": {
             "description": "200 response",
@@ -67,7 +69,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Empty"
+                  "$ref": "#/components/schemas/Reservation"
                 }
               }
             }
@@ -89,6 +91,8 @@
         }
       },
       "options": {
+      "summary": "handling error",
+       "description": "error handling on reservations.",
         "responses": {
           "200": {
             "description": "200 response",
@@ -139,6 +143,8 @@
     },
     "/tables": {
       "get": {
+      "summary": "Get all tables",
+        "description": "Retrieve a list of all tables.",
         "responses": {
           "200": {
             "description": "200 response",
@@ -152,7 +158,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Empty"
+                  "$ref": "#/components/schemas/Table"
                 }
               }
             }
@@ -174,6 +180,8 @@
         }
       },
       "post": {
+      "summary": "posting table",
+        "description": "posting tables data.",
         "responses": {
           "200": {
             "description": "200 response",
@@ -187,7 +195,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Empty"
+                  "$ref": "#/components/schemas/Table"
                 }
               }
             }
@@ -209,6 +217,8 @@
         }
       },
       "options": {
+      "summary": "tables error",
+       "description": "error handling on tables.",
         "responses": {
           "200": {
             "description": "200 response",
@@ -259,6 +269,8 @@
     },
     "/signin": {
       "post": {
+      "summary": "signin for user",
+       "description": "signin data for user.",
         "responses": {
           "200": {
             "description": "200 response",
@@ -272,7 +284,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Empty"
+                  "$ref": "#/components/schemas/Userlog"
                 }
               }
             }
@@ -294,6 +306,8 @@
         }
       },
       "options": {
+      "summary": "error on user",
+       "description": "handling error with user data.",
         "responses": {
           "200": {
             "description": "200 response",
@@ -344,6 +358,8 @@
     },
     "/tables/{tableId}": {
       "get": {
+      "summary": "Get table on id",
+       "description": "Retrieve table on id.",
         "parameters": [
           {
             "name": "tableId",
@@ -389,6 +405,8 @@
         }
       },
       "options": {
+      "summary": "Get id on table",
+       "description": "Retrieve table on id.",
         "parameters": [
           {
             "name": "tableId",
@@ -449,6 +467,8 @@
     },
     "/signup": {
       "post": {
+      "summary": "signup user",
+       "description": "signup for user data",
         "responses": {
           "200": {
             "description": "200 response",
@@ -462,7 +482,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Empty"
+                  "$ref": "#/components/schemas/User"
                 }
               }
             }
@@ -484,6 +504,8 @@
         }
       },
       "options": {
+      "summary": "sinup for user error",
+       "description": "handling user error signup.",
         "responses": {
           "200": {
             "description": "200 response",
@@ -540,6 +562,39 @@
         "title": "Empty Schema",
         "type": "object"
       },
+      "Userlog": {
+	      "type": "object",
+	      "properties": {
+	        
+	        "email": {
+	          "type": "string",
+	          "format": "email"
+	        },
+	        "password": {
+	          "type": "string"
+	        }
+	        
+	      }
+	    },
+      "User": {
+	      "type": "object",
+	      "properties": {
+	        "firstName": {
+	          "type": "string"
+	        },
+	        "lastName": {
+	          "type": "string"
+	        },
+	        "email": {
+	          "type": "string",
+	          "format": "email"
+	        },
+	        "password": {
+	          "type": "string"
+	        }
+	        
+	      }
+	    },
       "Reservation": {
         "type": "object",
         "properties": {
