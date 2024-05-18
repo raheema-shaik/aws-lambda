@@ -56,6 +56,17 @@
       "post": {
       "summary": "Post the reservations",
        "description": "Posting reservations.",
+       "requestBody": {
+          "description": "Reservation object that needs to be added to the store",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Reservation"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "200 response",
